@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>TODO List</title>
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+    <body>
+        <div class="todo-cntnr">
+            <div class="heading border-below">TODO App</div>
+            <form action="/add-task" method="POST" id="add-task">
+                <div class="descrip-cntnr border-below">
+                    <div class="desc-heading">Description</div>
+                    <input id="descrip-text" type="text" placeholder="What do you need to do?" required>
+                </div>
+                <div class="category-cntnr border-below">
+                    <div class="cat-head">Category</div>
+                    <select>
+                        <option value="home">Home</option>
+                        <option value="work">Work</option>
+                        <option value="school">School</option>                    
+                      </select>
+                </div>
+                <div class="category-cntnr  border-below" id="duedate-cntnr">
+                    <div class="cat-head" >Due date</div>
+                    <input type="date" required>
+                </div>
+                <button type="submit" class="hidden" id="add-task-submit"></button>
+                
+            </form>
+            <div class = "button-cntnr border-below">
+                <button id="add-task-btn" >Add Task</button>
+                <button id="delete-task-btn">Delete Task</button>
+            </div>
+           
+            
+           
+            <form action="/delete-task" method="POST" id="delete-task">
+                <div class="tasks-cntnr">
+                    <ul>
+                        <li class="border-below">
+                            <input type="checkbox" id="task1" >
+                            <label for="task1">                                
+                                    <div class="task-desc">Task 1</div>
+                                    <div class="task-category">Work</div>
+                                    <div class="task-date">06/05/2020</div>
+                            </label>
+                            
+                            
+                        </li>
+                        <li class="border-below">
+                            <input type="checkbox" id="task1" >
+                            <label for="task1">                                
+                                    <div class="task-desc">Task 1</div>
+                                    <div class="task-category">Work</div>
+                                    <div class="task-date">06/05/2020</div>
+                            </label>
+                            
+                            
+                        </li>
+                        <li class="border-below">
+                            <input type="checkbox" id="task1" >
+                            <label for="task1">                                
+                                    <div class="task-desc">Task 1</div>
+                                    <div class="task-category">Work</div>
+                                    <div class="task-date">06/05/2020</div>
+                            </label>
+                            
+                            
+                        </li>
+                    </ul>
+                </div>
+                <button type="submit" class="hidden" id="delete-task-submit"></button>
+            </form>
+           
+            
+           
+        </div>
+        <script src="javascript/index.js"></script>
+    </body>
+</html>

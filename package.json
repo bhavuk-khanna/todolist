@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/bhavuk-khanna/todolist#readme",
   "dependencies": {
+    "ejs": "^3.1.2",
     "express": "^4.17.1"
   }
 }

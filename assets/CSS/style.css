@@ -1,0 +1,85 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    color: #6A6666;
+    background-color: lightgray;
+}
+.todo-cntnr{
+    height: auto;
+    width: 800px;
+    margin: auto;
+    background-color: white;
+}
+.border-below{
+    border-bottom: 1px solid rgb(170, 162, 162);
+}
+.heading{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 550;
+    
+}
+
+.descrip-cntnr{
+    padding: 5px;
+}
+.desc-heading{
+    font-weight: bold;
+}
+#descrip-text{
+    outline: none;
+    border: none;
+    width: 100%;
+    word-spacing: 2px;
+    height: 40px;
+}
+#descrip-text::placeholder{
+    font-weight: 100;
+    color: rgba(84, 87, 87, 0.651);
+}
+
+.category-cntnr{
+    display: inline-block;
+    width: 46.7%;
+    height: 80px;
+    padding: 10px;
+    border-left: 1px solid rgb(170, 162, 162);
+}
+
+#duedate-cntnr{
+   vertical-align: top;
+    
+}
+
+
+.button-cntnr{
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tasks-cntnr ul{
+    list-style-type: none;
+}
+
+.tasks-cntnr ul li{
+    margin-bottom: 1em;
+}
+li input{
+    vertical-align: top;
+    display: inline-block;
+}
+label{
+    display: inline-block;
+}
+.task-desc{
+    display: inline-block;
+}
+
+.task-category{
+    display: inline-block;
+}
+
+
+.hidden{
+    display: none;
+}
