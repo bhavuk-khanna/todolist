@@ -7,14 +7,17 @@
     <body>
         <div class="todo-cntnr">
             <div class="heading border-below">TODO App</div>
+
+
+            <!-- Input data section -->
             <form action="/add-task" method=post id="add-task">
                 <div class="descrip-cntnr border-below">
-                    <div class="desc-heading">Description</div>
+                    <div class="desc-heading bold">Description</div>
                     <input id="descrip-text" name="desc" type="text" placeholder="What do you need to do?" required>
                 </div>
                 
                     <div class="category-cntnr border-below">
-                        <div class="cat-head">Category</div>
+                        <div class="cat-head bold">Category</div>
                         <!-- <select name="cat" form="add-task" id="cat">
                             <option value="">Select Option</option>
                             <option value="home">Home</option>
@@ -52,7 +55,7 @@
                 
                 
                 <div class="category-cntnr  border-below" id="duedate-cntnr">
-                    <div class="cat-head" >Due date</div>
+                    <div class="cat-head bold" >Due date</div>
                     <div class="date-picker">
                         <input type="date" name="date" required>
                     </div>
@@ -61,6 +64,9 @@
                 <button type="submit" class="hidden" id="add-task-submit"></button>
                 
             </form>
+
+
+            <!-- Button section -->
             <div class = "button-cntnr border-below">
                 <button class="btn" id="add-task-btn">
                     <i class="fas fa-plus"></i>
@@ -74,7 +80,7 @@
             </div>
            
             
-           
+           <!-- Task section -->
             <form action="/delete-task" method=post id="delete-task">
                 <div class="tasks-cntnr">
                     <ul>
