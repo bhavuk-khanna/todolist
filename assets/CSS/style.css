@@ -20,6 +20,7 @@ body{
 }
 
 .descrip-cntnr{
+    height: 80px;
     padding: 5px;
 }
 .desc-heading{
@@ -50,7 +51,12 @@ body{
     
 }
 
-
+.date-picker input{
+    height: 50px;
+    border: none;
+    text-align: center;
+    width: 100%;
+}
 .button-cntnr{
     padding: 20px;
     display: flex;
@@ -65,21 +71,136 @@ body{
     margin-bottom: 1em;
 }
 li input{
-    vertical-align: top;
     display: inline-block;
 }
-label{
+.label-cntnr-cntnr{
+    width: 90%;
     display: inline-block;
+}
+.label-cntnr{
+    
+    /* display: inline-block; */
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    vertical-align: top;
+}
+.task-details-cntnr{
+    
+    display: flex;
+    justify-content: space-around;
+}
+.desc-date-cntnr{
+    display: inline-block;
+    
 }
 .task-desc{
-    display: inline-block;
+    font-weight: bold;
+    font-size: 20px;
+    /* display: inline-block; */
+    margin-bottom: 10px;
+    
 }
 
 .task-category{
+    padding-top: 10px;
+    text-align: center;
     display: inline-block;
+    
+    height: 30px;
+    width: 100px;
+    color: white;
+    border-radius: 2px;
+    font-size: 20px;
 }
-
+.home{
+    background-color: orange;
+}
+.work{
+    background-color: purple;
+}
+.school{
+    background-color: royalblue;
+}
+.task-date{
+    /* display: inline-block; */
+    margin-bottom: 10px;
+}
 
 .hidden{
     display: none;
 }
+
+
+.btn{
+    height: 50px;
+    width: 150px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    border-radius: 4px;
+}
+
+.btn div{
+    margin-left: 10px;
+    display: inline-block;
+    
+}
+
+#add-task-btn{
+    background-color: black;
+}
+
+#delete-task-btn{
+    background-color: red;
+}
+
+
+
+/*-------------Custom Checkboxes-----------*/
+
+li input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+  }
+  
+  li label {
+    position: relative;
+    cursor: pointer;
+    
+  }
+  
+  li label:before {
+    content:'';
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 2px solid #07090a;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  li input:checked + label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 9px;
+    width: 6px;
+    height: 14px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  li input:checked + label:before {
+    background: #07090a;
+  } 

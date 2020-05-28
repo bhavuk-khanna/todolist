@@ -19,3 +19,5 @@ deleteTaskBtn.addEventListener('click', deleteTask);
 function deleteTask(e) {
     submitButton2.click();
 }
+
+

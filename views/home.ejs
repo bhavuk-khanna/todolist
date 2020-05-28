@@ -1,71 +1,106 @@
 <html>
     <head>
         <title>TODO List</title>
+        <link rel="stylesheet" href="CSS/custom-select.css">
         <link rel="stylesheet" href="CSS/style.css">
     </head>
     <body>
         <div class="todo-cntnr">
             <div class="heading border-below">TODO App</div>
-            <form action="/add-task" method="POST" id="add-task">
+            <form action="/add-task" method=post id="add-task">
                 <div class="descrip-cntnr border-below">
                     <div class="desc-heading">Description</div>
-                    <input id="descrip-text" type="text" placeholder="What do you need to do?" required>
+                    <input id="descrip-text" name="desc" type="text" placeholder="What do you need to do?" required>
                 </div>
-                <div class="category-cntnr border-below">
-                    <div class="cat-head">Category</div>
-                    <select>
-                        <option value="home">Home</option>
-                        <option value="work">Work</option>
-                        <option value="school">School</option>                    
-                      </select>
-                </div>
+                
+                    <div class="category-cntnr border-below">
+                        <div class="cat-head">Category</div>
+                        <!-- <select name="cat" form="add-task" id="cat">
+                            <option value="">Select Option</option>
+                            <option value="home">Home</option>
+                            <option value="work">Work</option>
+                            <option value="school">School</option>                    
+                        </select> -->
+
+                        <div class="cont_select_center">
+
+                            <!-- Custom select structure --> 
+                              <div class="select_mate" data-mate-select="active" >
+                                  <select name="cat" form="add-task" onclick="return false;" id="cat">
+                                  <option value="" >Select Option </option>
+                                  <option value="home">Home</option>
+                                  <option value="work" >Work</option>
+                                  <option value="school">School</option>
+                                  </select>
+                                  <p class="selecionado_opcion"  onclick="open_select(this)" ></p>
+                                  <span onclick="open_select(this)" class="icon_select_mate" >
+                                      <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+                                          <path d="M0-.75h24v24H0z" fill="none"/>
+                                      </svg>
+                                  </span>
+                                  <div class="cont_list_select_mate">
+                                    <ul class="cont_select_int">  </ul> 
+                                  </div>
+                                </div>
+                                <!-- Custom select structure --> 
+                      
+                      
+                          </div>
+    
+                    </div>
+                
+                
                 <div class="category-cntnr  border-below" id="duedate-cntnr">
                     <div class="cat-head" >Due date</div>
-                    <input type="date" required>
+                    <div class="date-picker">
+                        <input type="date" name="date" required>
+                    </div>
+                    
                 </div>
                 <button type="submit" class="hidden" id="add-task-submit"></button>
                 
             </form>
             <div class = "button-cntnr border-below">
-                <button id="add-task-btn" >Add Task</button>
-                <button id="delete-task-btn">Delete Task</button>
+                <button class="btn" id="add-task-btn">
+                    <i class="fas fa-plus"></i>
+                    <div>Add Task</div>
+                    
+                </button>
+                <button class="btn" id="delete-task-btn">
+                    <i class="far fa-trash-alt"></i>
+                    <div>Delete Task</div>
+                </button>
             </div>
            
             
            
-            <form action="/delete-task" method="POST" id="delete-task">
+            <form action="/delete-task" method=post id="delete-task">
                 <div class="tasks-cntnr">
                     <ul>
+                        <% for(let i of taskList) {%>
                         <li class="border-below">
-                            <input type="checkbox" id="task1" >
-                            <label for="task1">                                
-                                    <div class="task-desc">Task 1</div>
-                                    <div class="task-category">Work</div>
-                                    <div class="task-date">06/05/2020</div>
+                            <input  type="checkbox" name ="tasks" id="<%=i.id%>" value="<%=i.id%>">
+                            <label for="<%=i.id%>">
+                                <div class="label-cntnr-cntnr">
+                                <div class="label-cntnr">
+                                    <div class="desc-date-cntnr">
+                                        <div class="task-desc"><%=i.description %></div>
+                                    
+                                   
+                                        <div class="task-date">
+                                            <i class="far fa-calendar-alt"></i>
+                                            <%=i.dueDate.toDateString() %>
+                                        </div>
+                                    </div>                                                                                                  
+                                    
+                                    <div class="task-category <%=i.category %>"><%=i.category %></div>
+                                </div> 
+                                </div>                        
                             </label>
-                            
-                            
                         </li>
-                        <li class="border-below">
-                            <input type="checkbox" id="task1" >
-                            <label for="task1">                                
-                                    <div class="task-desc">Task 1</div>
-                                    <div class="task-category">Work</div>
-                                    <div class="task-date">06/05/2020</div>
-                            </label>
-                            
-                            
-                        </li>
-                        <li class="border-below">
-                            <input type="checkbox" id="task1" >
-                            <label for="task1">                                
-                                    <div class="task-desc">Task 1</div>
-                                    <div class="task-category">Work</div>
-                                    <div class="task-date">06/05/2020</div>
-                            </label>
-                            
-                            
-                        </li>
+                        
+                        <%}%>
                     </ul>
                 </div>
                 <button type="submit" class="hidden" id="delete-task-submit"></button>
@@ -74,6 +109,8 @@
             
            
         </div>
+        <script src="https://kit.fontawesome.com/ed46840379.js" crossorigin="anonymous"></script>
+        <script src="javascript/custom-select.js"></script>
         <script src="javascript/index.js"></script>
     </body>
 </html>
